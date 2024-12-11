@@ -1,14 +1,19 @@
 import React from "react";
-import "./styles/main.scss";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import Banner from "./banner";
+import { GlobalStyle } from "./GlobalStyle";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
 const App = () => {
   return (
     <>
       <Router>
-        <Banner />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Banner />
+        </ThemeProvider>
       </Router>
     </>
   );
